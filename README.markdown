@@ -6,6 +6,6 @@ Local onde você pode pesquisar e sugerir temas para trabalhos de conclusão de 
 
   * Guilherme Vinicius Moreira
   * Heitor Toledo
-  * Joyce Caroline
+  * Joyce C dos Santos
   * Milena O M Rocha
   * Rafael de Mello
