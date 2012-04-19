@@ -1,4 +1,6 @@
 class CollegesController < ApplicationController
+  before_filter :authenticate_user!
+  
   # GET /colleges
   # GET /colleges.json
   def index

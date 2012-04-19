@@ -1,10 +1,10 @@
 Tecece::Application.routes.draw do
-  resources :projects
-
+  
   devise_for :users
-
+  
+  resources :projects
   resources :colleges
 
-  root :to => 'colleges#index'
+  root :to => 'home#index'
 
 end
