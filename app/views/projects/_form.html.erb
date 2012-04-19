@@ -1,38 +1,29 @@
-<%= form_for @project, :html => { :class => 'form-horizontal' } do |f| %>
-  <div class="control-group">
+<%= form_for Project.new(:user_id => current_user.id) do |f| %>
+
+  <div>
     <%= f.label :title, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :title, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :description, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_area :description, :class => 'text_area' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :delivery_year, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.date_select :delivery_year, :class => 'date_select' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :college_id, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.number_field :college_id, :class => 'number_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :keywords, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_area :keywords, :class => 'text_area' %>
-    </div>
+    <%= f.text_field :title, :class => 'text_field span4' %>
   </div>
 
-  <div class="form-actions">
-    <%= f.submit nil, :class => 'btn btn-primary' %>
-    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                projects_path, :class => 'btn' %>
+  <div>
+    <%= f.label :description, :class => 'control-label' %>
+    <%= f.text_area :description, :class => 'text_area span4', :rows => 5 %>
   </div>
+
+  <div>
+    <%= f.label :keywords, :class => 'control-label' %>
+    <%= f.text_field :keywords, :class => 'text_field span4' %>
+  </div>
+
+  <div>
+    <%= f.label :delivery_year, :class => 'control-label' %>
+    <%= f.date_select :delivery_year, :class => 'span1', :discard_day => true, :discard_month => true %>
+  </div>
+
+  <div>
+    <%= f.label :college_id, :class => 'control-label' %>
+    <%= f.select :college_id, College.all.collect {|c| [c.name, c.id]} %>
+  </div>
+  
+  <%= f.submit nil, :class => 'btn btn-primary' %>
 <% end %>

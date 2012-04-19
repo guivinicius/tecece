@@ -1,3 +1,22 @@
+<div class="modal hide fade in" id="createProject">
+  <div class="modal-header">
+    <a class="close" data-dismiss="modal">×</a>
+    <h3>Novo Trabalho</h3>
+  </div>
+  <div class="modal-body">
+    <%= render "projects/form" %>
+  </div>
+  <div class="modal-footer">
+    <%= link_to "Cancelar", "", "data-dismiss" => "modal" %>
+  </div>
+</div>
+
+<form class="well form-search">
+  <input type="text" class="input-large search-query">
+  <button type="submit" class="btn btn-small">Procurar</button>
+  <%= link_to "Adicionar Trabalho", "", :class => "btn btn-primary btn-small pull-right", "data-toggle" => "modal", :href => "#createProject" %>
+</form>
+
 <table class="table table-striped">
   <thead>
     <tr>
