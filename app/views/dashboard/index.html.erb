@@ -1,0 +1,14 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Últimos trabalhos</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @projects.each do |p| %>
+      <tr>
+        <td><%= p.title %></td>
+      </tr>
+    <% end -%>
+  </tbody>
+</table>
