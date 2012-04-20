@@ -13,6 +13,16 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-group :development do
+group :development, :test do
+  gem 'debugger'
   gem 'rspec-rails'
+  gem 'factory_girl_rails'
+  gem 'guard'
+  gem 'guard-rspec'
+  gem 'guard-bundler'
+  gem 'guard-livereload'
+  gem 'growl'
+  gem 'capybara'
+  gem 'simplecov', :require => false
 end
+
