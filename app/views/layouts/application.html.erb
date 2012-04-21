@@ -26,6 +26,7 @@
           <a class="brand" href="#">Tecece</a>
           <div class="container nav-collapse">
             <ul class="nav">
+              <li><%= link_to "Alterar Conta", edit_user_registration_path %></li>
               <li><%= link_to "Sair", destroy_user_session_path, :method => :delete %></li>
             </ul>
           </div><!--/.nav-collapse -->
@@ -43,7 +44,7 @@
               <div class="well sidebar-nav">
                 <ul class="nav nav-list">
                   <!-- <li class="nav-header"></li> -->
-                  <% @colleges.each do |c| %>
+                  <% College.all.each do |c| %>
                     <li><%= link_to "#{c.name} (#{c.short})", college_path(c)  %></li>
                   <% end -%>
                 </ul>
