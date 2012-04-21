@@ -16,6 +16,7 @@ class CollegesController < ApplicationController
   # GET /colleges/1.json
   def show
     @college = College.find(params[:id])
+    @colleges = College.all
 
     respond_to do |format|
       format.html # show.html.erb

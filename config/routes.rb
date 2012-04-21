@@ -1,10 +1,15 @@
 Tecece::Application.routes.draw do
 
+  get "dashboard/index"
+
   devise_for :users
-  match '/dashboard' => "dashboard#index", :as => :user_root
 
   resources :projects
   resources :colleges
+
+  authenticated :user do
+    root :to => "dashboard#index"
+  end
 
   root :to => 'home#index'
 
