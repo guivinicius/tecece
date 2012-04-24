@@ -1,12 +1,7 @@
-<%- model_class = @college.class -%>
-<h1><%=t '.title', :default => model_class.model_name.human %></h1>
-
 <p>
-  <strong><%= model_class.human_attribute_name(:name) %>:</strong><br>
   <%= @college.name %>
 </p>
 <p>
-  <strong><%= model_class.human_attribute_name(:short) %>:</strong><br>
   <%= @college.short %>
 </p>
 
