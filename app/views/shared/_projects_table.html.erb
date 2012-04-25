@@ -1,0 +1,17 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= title %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% projects.each do |p| %>
+      <tr>
+        <td>
+          <%= p.title %>
+          <%= link_to "Ver", project_path(p), :class => "btn btn-success btn-mini pull-right" %>
+        </td>
+      </tr>
+    <% end -%>
+  </tbody>
+</table>

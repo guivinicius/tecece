@@ -38,6 +38,11 @@
       <div class="content">
         <div class="row">
            <div class="span9">
+              <form class="well form-search">
+                <input type="text" class="input-large search-query pull-right">
+                <%= link_to "Adicionar Trabalho", "#", :class => "btn btn-primary btn-small", "data-toggle" => "modal", :href => "#createProject" %>
+                <%= link_to "Adicionar Sugestão", "#", :class => "btn btn-warning btn-small", "data-toggle" => "modal", :href => "#createProject" %>
+              </form>
               <%= yield %>
             </div>
             <div class="span3">
