@@ -1,15 +1,21 @@
-<%= render "modal"%>
+<%#= form_for(User.new, :as => :user, :url => session_path(:user), :html => {:class => "pull-right form-inline"} ) do |f| %>
+  <%#= f.email_field :email, :class => "input-medium", :placeholder => "Email" %>
+  <%#= f.password_field :password, :class => "input-medium", :placeholder => "Senha" %>
+  <%#= f.submit "Entrar", :class => "btn" %>
+<%# end %>
 
-<%= form_for(User.new, :as => :user, :url => session_path(:user), :html => {:class => "well form-inline"} ) do |f| %>
-  <%= f.email_field :email, :class => "input-medium", :placeholder => "Email" %>
-  <%= f.password_field :password, :class => "input-medium", :placeholder => "Senha" %>
-  <%= f.submit "Entrar", :class => "btn" %>
-<% end %>
+<div class="clearfix"></div>
 
-<div class="hero-unit">
-  <h1>TECECE</h1>
-  <p>Local onde você pode pesquisar e sugerir temas para trabalhos de conclusão de curso (TCC), podendo também adicionar seus trabalhos e projetos para ter como referência na instituição.</p>
-  <p>
-    <%= link_to "Cadastre aqui!", "", :class => "btn btn-success btn-large", "data-toggle" => "modal", :href => "#signup" %>
-  </p>
-</div>
+<!-- <div class="hero-unit"> -->
+  <div class="row">
+    <div class="span8">
+      <h1>TECECE</h1>
+      <p>
+        Local onde você pode pesquisar e sugerir temas para trabalhos de conclusão de curso (TCC), podendo também adicionar seus trabalhos e projetos para ter como referência na instituição.
+      </p>
+    </div>
+    <div class="span4">
+        <%= render "signup_form" %>
+    </div>
+  </div>
+<!-- </div> -->
