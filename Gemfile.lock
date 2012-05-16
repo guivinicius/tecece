@@ -1,11 +1,12 @@
 GIT
   remote: git://github.com/seyhunak/twitter-bootstrap-rails.git
-  revision: 5375a44fa12cff9cd5c5da33ba5eafcb0cb227fb
+  revision: ae711d8161466f3f2758557385f1975dd2f74e4c
   specs:
-    twitter-bootstrap-rails (2.0.6)
+    twitter-bootstrap-rails (2.0.7)
       actionpack (>= 3.1)
-      less-rails (~> 2.2.0)
+      less-rails (~> 2.2.2)
       railties (>= 3.1)
+      therubyracer (~> 0.10.1)
 
 GEM
   remote: https://rubygems.org/
@@ -52,7 +53,7 @@ GEM
     childprocess (0.3.1)
       ffi (~> 1.0.6)
     columnize (0.3.6)
-    commonjs (0.2.5)
+    commonjs (0.2.6)
     crack (0.1.8)
     debugger (1.1.1)
       columnize (>= 0.3.1)
@@ -106,14 +107,13 @@ GEM
     jquery-ui-rails (0.4.0)
       jquery-rails
       railties (>= 3.1.0)
-    json (1.6.6)
-    json (1.6.6-java)
-    less (2.1.0)
-      commonjs (~> 0.2.0)
-      therubyracer (~> 0.10.0)
-    less-rails (2.2.1)
+    json (1.7.3)
+    json (1.7.3-java)
+    less (2.2.1)
+      commonjs (~> 0.2.6)
+    less-rails (2.2.2)
       actionpack (>= 3.1)
-      less (~> 2.1.0)
+      less (~> 2.2.0)
     libv8 (3.3.10.4)
     libwebsocket (0.1.3)
       addressable
@@ -122,7 +122,7 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.18)
-    multi_json (1.3.2)
+    multi_json (1.3.5)
     multi_xml (0.4.4)
     neography (0.0.25)
       crack (= 0.1.8)
@@ -190,7 +190,7 @@ GEM
       multi_json (~> 1.0)
       simplecov-html (~> 0.5.3)
     simplecov-html (0.5.3)
-    sprockets (2.1.2)
+    sprockets (2.1.3)
       hike (~> 1.2)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
