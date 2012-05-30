@@ -15,4 +15,5 @@
 //= require jquery-ui
 //= require twitter/bootstrap
 //= require tag-it
+//= require rails.validations
 //= require_tree .

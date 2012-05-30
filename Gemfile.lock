@@ -54,6 +54,7 @@ GEM
       xpath (~> 0.1.4)
     childprocess (0.3.2)
       ffi (~> 1.0.6)
+    client_side_validations (3.1.4)
     columnize (0.3.6)
     commonjs (0.2.6)
     crack (0.1.8)
@@ -218,6 +219,7 @@ PLATFORMS
 DEPENDENCIES
   acts-as-taggable-on (~> 2.3.1)
   capybara
+  client_side_validations
   debugger
   devise
   factory_girl_rails

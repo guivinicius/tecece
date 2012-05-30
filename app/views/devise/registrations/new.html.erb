@@ -1,18 +1,23 @@
 <div class="row">
   <div class="span4 offset4">
-    <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+    <center>
+    <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => "well"}) do |f| %>
+        <h1>CADASTRE-SE</h1>
+        <hr>
+        <%= f.text_field :name, :placeholder => "Nome completo" %>
 
         <%= f.email_field :email, :placeholder => "Email" %>
-        <p class="help-block"><%= resource.errors[:email].first.humanize if !resource.errors[:email].empty? %></p>
+        <!-- <p class="help-block"><%= resource.errors[:email].first.humanize if !resource.errors[:email].empty? %></p> -->
 
         <%= f.password_field :password, :placeholder => "Senha" %>
-        <p class="help-block"><%= resource.errors[:password].first.humanize if !resource.errors[:password].empty? %></p>    
+        <!-- <p class="help-block"><%= resource.errors[:password].first.humanize if !resource.errors[:password].empty? %></p>     -->
 
         <%= f.password_field :password_confirmation, :placeholder => "Confirme sua senha" %>
 
         <div class="actions">
-          <%= f.submit "Cadastrar", :class => "btn btn-success" %>
+          <%= f.submit "Cadastrar", :class => "btn btn-success", :style => "width:220px" %>
         </div>
     <% end %>
+    </center>
   </div>
 </div>

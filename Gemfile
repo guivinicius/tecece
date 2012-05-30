@@ -9,6 +9,7 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 gem 'acts-as-taggable-on', '~> 2.3.1'
+gem 'client_side_validations'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
