@@ -1,8 +1,9 @@
 <div class="row">
   <div class="span4 offset4">
     <center>
-    <%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => "well"} ) do |f| %>
-
+    <%= form_for(resource, :validate => true, :as => resource_name, :url => session_path(resource_name), :html => {:class => "well"} ) do |f| %>
+        <h1>CONECTE-SE</h1>
+        <hr>
         <%= f.email_field :email, :placeholder => "Email" %>
 
         <%= f.password_field :password, :placeholder => "Senha" %>
@@ -10,7 +11,8 @@
       <div class="actions">
         <%= f.submit "Entrar", :class => "btn btn-success", :style => "width:220px" %>
       </div>
-      
+      <hr>
+      <%= render "devise/shared/links" %>
     <% end %>
     </center>
   </div>
