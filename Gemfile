@@ -2,7 +2,8 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.3'
 
-gem 'sqlite3'
+gem 'pg'
+
 gem 'neography'
 gem 'jquery-rails'
 gem 'devise'
@@ -11,7 +12,6 @@ gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootst
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'uglifier', '>= 1.0.3'
-  gem 'jquery-ui-rails'
 end
 
 group :development, :test do
