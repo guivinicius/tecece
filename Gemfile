@@ -24,6 +24,7 @@ group :development, :test do
   gem 'guard-rspec'
   gem 'guard-bundler'
   gem 'guard-livereload'
+  gem 'rack-livereload'
   gem 'growl'
   gem 'capybara'
   gem 'simplecov', :require => false

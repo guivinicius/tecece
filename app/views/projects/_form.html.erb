@@ -1,40 +1,45 @@
-<%= form_for Project.new(:user_id => current_user.id), :html => {:class => "form-horizontal pull-left"} do |f| %>
+<%= form_for Project.new(:user_id => current_user.id), :validate => true, :html => {:class => "form-horizontal pull-left"} do |f| %>
 
   <div class="control-group">
-    <%= f.label :title, :class => 'control-label' %>
+    <%= f.label :title, "Título", :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :title, :class => 'text_field span4' %>
     </div>
   </div>
 
   <div class="control-group">
-    <%= f.label :description, :class => 'control-label' %>
+    <%= f.label :description, "Resumo", :class => 'control-label' %>
     <div class="controls">
       <%= f.text_area :description, :class => 'text_area span4', :rows => 5 %>
     </div>
   </div>
 
   <div class="control-group">
-    <%= f.label :tags, :class => 'control-label' %>
+    <%= f.label :tag_list, "Palavras-chave", :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :tags, :class => 'text_field span4' %>
+      <%= f.text_field :tag_list, :class => 'text_field span4' %>
     </div>
   </div>
 
   <div class="control-group">
-    <%= f.label :delivery_year, :class => 'control-label' %>
+    <%= f.label :delivery_year, "Ano de Entrega", :class => 'control-label' %>
     <div class="controls">
       <%= f.date_select :delivery_year, :class => 'span1', :discard_day => true, :discard_month => true %>
     </div>
   </div>
 
   <div class="control-group">
-    <%= f.label :college_id, :class => 'control-label' %>
+    <%= f.label :college_id, "Instituição", :class => 'control-label' %>
     <div class="controls">
       <%= f.select :college_id, College.all.collect {|c| [c.name, c.id]} %>
     </div>
   </div>
+
+  <%= f.text_field :user_id, :class => "hide" %>
   
-  <%= f.submit nil, :class => 'btn btn-primary' %>
-  <%= link_to "Cancelar", "", "data-dismiss" => "modal" %>
+  <div class="form-actions">
+    <%= f.submit "Criar Projeto", :class => 'btn btn-primary' %>
+    <%= link_to "Cancelar", root_path, "data-dismiss" => "modal" %>
+  </div>
+  
 <% end %>

@@ -11,17 +11,45 @@
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
     <![endif]-->
 
-    <%= stylesheet_link_tag "application", :media => "all" %>
+    <%= stylesheet_link_tag "application" %>
   </head>
-  <body style="padding-top:60px;">
-
+  <body style="padding-top:60px; background-color:#2A313A;">
     <div class="container">
-      
-      <%#= render 'shared/top_bar' %>
+      <div class="row">
+        <div class="span12">
+          <%= link_to "Home", root_path, :class => "pull-left" %>
+          <%= link_to "Sair", destroy_user_session_path, :method => :delete, :class => "pull-right" %>
+        </div>
+      </div>
+    </div>
 
-      <div class="content">
-        <%= yield %>
-      </div><!--/content-->
+    <div class="container well" style="height: 500px; background-color:white;">
+      <div class="row">
+        <div class="span12">
+          <%= link_to "Adicionar Trabalho", new_project_path, :class => "btn btn-primary btn-small", "data-toggle" => "modal" %>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="row">
+        <div class="span4">
+          <div class="well">
+            <ul class="nav nav-list">
+              <li class="nav-header">
+                Instituições
+              </li>
+              <% College.all.each do |c| %>
+              <li><%= link_to c.short, college_path(c) %></li>
+              <% end -%>
+            </ul>
+          </div>
+        </div>
+        <!-- dynamic content -->
+        <div class="span8">
+          <%= yield %>
+        </div>
+      </div> <!-- /row -->
 
     </div> <!-- /container -->
 
