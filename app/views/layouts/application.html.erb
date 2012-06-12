@@ -17,16 +17,28 @@
     <div class="container">
       <div class="row">
         <div class="span12">
-          <%= link_to "Home", root_path, :class => "pull-left" %>
-          <%= link_to "Sair", destroy_user_session_path, :method => :delete, :class => "pull-right" %>
+          
+
+          
+
         </div>
       </div>
     </div>
 
-    <div class="container well" style="height: 500px; background-color:white;">
+    <div class="container well" style="min-height: 500px;">
       <div class="row">
         <div class="span12">
-          <%= link_to "Adicionar Trabalho", new_project_path, :class => "btn btn-primary btn-small", "data-toggle" => "modal" %>
+          <%= link_to "Adicionar Trabalho", new_project_path, :class => "btn btn-primary btn-small" %>
+
+          <div class="btn-group pull-right">
+            <a class="btn btn-primary" href="#"><i class="icon-user icon-white"></i> Minha conta</a>
+            <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="<%= edit_user_registration_path %>"><i class="icon-pencil"></i> Editar</a></li>
+              <li class="divider"></li>
+              <li><a href="<%= destroy_user_session_path %>" data-method="delete"><i class="icon-off"></i> Sair</a></li>
+            </ul>
+          </div>
         </div>
       </div>
 
@@ -36,9 +48,10 @@
         <div class="span4">
           <div class="well">
             <ul class="nav nav-list">
-              <li class="nav-header">
-                Instituições
-              </li>
+              <li class="nav-header">Trabalhos</li>
+              <li><%= link_to "Mais Recentes", root_path %></li>
+              <li class="divider"></li>
+              <li class="nav-header">Por Instituições</li>
               <% College.all.each do |c| %>
               <li><%= link_to c.short, college_path(c) %></li>
               <% end -%>
