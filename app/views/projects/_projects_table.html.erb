@@ -9,7 +9,11 @@
       <tr>
         <td>
           <%= p.title %>
-          <%= link_to "Ver", project_path(p), :class => "btn btn-success btn-mini pull-right" %>
+          
+        </td>
+        <td>
+          <%= link_to "Ver", project_path(p), :class => "btn btn-success btn-mini" %>
+          <%= link_to "Editar", edit_project_path(p), :class => "btn btn-warning btn-mini" if p.user_id == current_user.id %>
         </td>
       </tr>
     <% end -%>

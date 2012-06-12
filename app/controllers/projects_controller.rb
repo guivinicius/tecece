@@ -17,6 +17,7 @@ class ProjectsController < ApplicationController
 
   def edit
     @project = Project.find(params[:id])
+    redirect_to root_path if @project.user_id != current_user.id 
   end
 
   def create
@@ -35,6 +36,7 @@ class ProjectsController < ApplicationController
 
   def update
     @project = Project.find(params[:id])
+    redirect_to root_path if @project.user_id != current_user.id 
 
     respond_to do |format|
       if @project.update_attributes(params[:project])
@@ -49,6 +51,7 @@ class ProjectsController < ApplicationController
 
   def destroy
     @project = Project.find(params[:id])
-    @project.destroy
+    @project.destroy if @project.user_id == current_user.id 
+    redirect_to root_path
   end
 end

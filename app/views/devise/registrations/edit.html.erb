@@ -1,8 +1,7 @@
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
-  <%= devise_error_messages! %>
+<%= form_for(resource, :validate => true, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
 
   <div class="control-group">
-    <%= f.label :name, :class => "control-label" %>
+    <%= f.label :name, "Nome", :class => "control-label" %>
     <div class="controls">
       <%= f.text_field :name %>
     </div>
@@ -16,7 +15,7 @@
   </div>
 
   <div class="control-group">
-    <%= f.label :password, :class => "control-label" %>
+    <%= f.label :password, "Nova senha", :class => "control-label" %>
     <div class="controls">
       <%= f.password_field :password %>
       <p class="help-block">Deixe em branco caso não queira alterar.</p>
@@ -24,23 +23,23 @@
   </div>
 
   <div class="control-group">
-    <%= f.label :password_confirmation, :class => "control-label" %>
+    <%= f.label :password_confirmation, "Confirme sua nova senha", :class => "control-label" %>
     <div class="controls">
       <%= f.password_field :password_confirmation %>
     </div>
   </div>
-
+  <hr>
   <div class="control-group">
-    <%= f.label :current_password, :class => "control-label" %>
+    <%= f.label :current_password, "Senha atual", :class => "control-label" %>
     <div class="controls">
       <%= f.password_field :current_password %>
     </div>
     <p class="help-block">Entre com sua senha atual para confirmar as alterações.</p>
   </div>
 
-  <%= f.submit "Atualizar", :class => "btn" %>
+  <%= f.submit "Atualizar", :class => "btn btn-success span3" %>
 <% end %>
 
-<h3>Cancel my account</h3>
+<hr>
 
-<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), :confirm => "Are you sure?", :method => :delete %>.</p>
+<p><%= link_to "Cancelar minha conta", registration_path(resource_name), :confirm => "Tem certeza ?", :method => :delete, :class => "btn btn-danger" %></p>

@@ -1,45 +1,28 @@
-<%= form_for @project, :validate => true, :html => {:class => "form-horizontal"} do |f| %>
-  <div class="control-group">
+<%= form_for @project, :validate => true do |f| %>
+
     <%= f.label :title, "Título", :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :title, :class => 'text_field span4' %>
-    </div>
-  </div>
+    <%= f.text_field :title, :class => 'text_field span6' %>
 
-  <div class="control-group">
+  
     <%= f.label :description, "Resumo", :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_area :description, :class => 'text_area span4', :rows => 5 %>
-    </div>
-  </div>
+    <%= f.text_area :description, :class => 'text_area span6', :rows => 10 %>
 
-  <div class="control-group">
+  
     <%= f.label :tag_list, "Palavras-chave", :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :tag_list, :class => "span4" %>
-       <p class="help-block">Palavras separadas por vírgulas. (Games, educação, direito)</p>
-    </div>
-  </div>
-  
-  <div class="control-group">
+    <%= f.text_field :tag_list, :class => "span6" %>
+    <p class="help-block">Palavras separadas por vírgulas. (Games, educação, direito)</p>
+    
     <%= f.label :college_id, "Instituição", :class => 'control-label' %>
-    <div class="controls">
-      <%= f.select :college_id, College.all.collect {|c| [c.name, c.id]}, {}, {:class => "span4"}  %>
-    </div>
-  </div>
+    <%= f.select :college_id, College.all.collect {|c| [c.name, c.id]}, {}, {:class => "span6"}  %>
 
-  <div class="control-group">
     <%= f.label :delivery_year, "Ano de Entrega", :class => 'control-label' %>
-    <div class="controls">
-      <%= f.date_select :delivery_year, {:discard_day => true, :discard_month => true}, {:class => 'span1'} %>
-    </div>
-  </div>
+    <%= f.date_select :delivery_year, {:discard_day => true, :discard_month => true}, {:class => 'span1'} %>
 
-  <%= f.text_field :user_id, :class => "hide" %>
+    <%= f.text_field :user_id, :class => "hide" %>
   
-  <div class="form-actions">
-    <%= f.submit "Criar Projeto", :class => 'btn btn-primary' %>
-    <%= link_to "Cancelar", root_path, "data-dismiss" => "modal" %>
-  </div>
+    <div class="form-actions">
+      <%= f.submit :class => 'btn btn-primary' %>
+      <%= link_to "Deletar Projeto", project_path(@project), :method => :delete, :class => "btn btn-danger pull-right", :confirm => "Tem certeza ?" if controller.action_name == "edit" %>
+    </div>
   
 <% end %>

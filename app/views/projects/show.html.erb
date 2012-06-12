@@ -3,7 +3,7 @@
 <h6>Autor: <%= @project.user.name %></h6>
 <hr>
 <div class="description lead">
-  <p><%= @project.description %></p>
+  <p><%= simple_format @project.description %></p>
 </div>
 <hr>
 <p class="tags">
@@ -11,3 +11,5 @@
   <span class="label label-info"><%= t.name %></span>
   <% end -%>
 </p>
+<hr>
+<%= link_to "Editar Projeto", edit_project_path(p), :class => "btn btn-warning" if @project.user_id == current_user.id %>
