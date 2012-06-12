@@ -12,7 +12,7 @@ class ProjectsController < ApplicationController
   end
 
   def new
-    @project = Project.new
+    @project = Project.new(:user_id => current_user.id)
   end
 
   def edit

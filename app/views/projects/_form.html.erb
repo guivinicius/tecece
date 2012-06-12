@@ -1,5 +1,4 @@
-<%= form_for Project.new(:user_id => current_user.id), :validate => true, :html => {:class => "form-horizontal pull-left"} do |f| %>
-
+<%= form_for @project, :validate => true, :html => {:class => "form-horizontal"} do |f| %>
   <div class="control-group">
     <%= f.label :title, "Título", :class => 'control-label' %>
     <div class="controls">
@@ -17,21 +16,22 @@
   <div class="control-group">
     <%= f.label :tag_list, "Palavras-chave", :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :tag_list, :class => 'text_field span4' %>
+      <%= f.text_field :tag_list, :class => "span4" %>
+       <p class="help-block">Palavras separadas por vírgulas. (Games, educação, direito)</p>
+    </div>
+  </div>
+  
+  <div class="control-group">
+    <%= f.label :college_id, "Instituição", :class => 'control-label' %>
+    <div class="controls">
+      <%= f.select :college_id, College.all.collect {|c| [c.name, c.id]}, {}, {:class => "span4"}  %>
     </div>
   </div>
 
   <div class="control-group">
     <%= f.label :delivery_year, "Ano de Entrega", :class => 'control-label' %>
     <div class="controls">
-      <%= f.date_select :delivery_year, :class => 'span1', :discard_day => true, :discard_month => true %>
-    </div>
-  </div>
-
-  <div class="control-group">
-    <%= f.label :college_id, "Instituição", :class => 'control-label' %>
-    <div class="controls">
-      <%= f.select :college_id, College.all.collect {|c| [c.name, c.id]} %>
+      <%= f.date_select :delivery_year, {:discard_day => true, :discard_month => true}, {:class => 'span1'} %>
     </div>
   </div>
 
